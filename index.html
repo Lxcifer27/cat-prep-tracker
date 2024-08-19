@@ -59,7 +59,7 @@
          color: #fff;
          text-decoration: none;
          position: relative;
-         z-index: 2;
+         z-index: 4;
          margin: auto;
          border: 1px solid #fff;
          background-color: #00000044;
@@ -74,7 +74,7 @@
          width: 300px;
          background: #f1f3f4;
          box-shadow: 0 50px 80px rgba(0, 0, 0, 0.25);
-         display: none;
+         visibility: hidden;
       }
 
       .player .imgbx {
@@ -133,11 +133,6 @@
          UPDATE
       </a>
    </div>
-   <div class="text" id="music">
-      <a href="#" id="toggleButton" onclick="togglePlayer()" style="border-color: red;color: red;">
-         CLICK ME
-      </a>
-   </div>
    <div class="player" id="player">
       <div class="imgbx">
          <img src="album.jpg" alt="Album Art">
@@ -145,6 +140,11 @@
       <audio controls>
          <source src="song.mp3" type="audio/mp3">
       </audio>
+   </div>
+   <div class="text" id="music">
+      <a href="#" id="toggleButton" onclick="togglePlayer()" style="border-color: red;color: red;">
+         CLICK ME
+      </a>
    </div>
    <div class="avatar">
       <img src="avatar.png" width="200px" alt="male">
@@ -155,11 +155,11 @@
       function togglePlayer() {
          var player = document.getElementById("player");
          var button = document.getElementById("toggleButton");
-         if (player.style.display === "none" || player.style.display === "") {
-            player.style.display = "block";
+         if (player.style.visibility === "hidden" || player.style.visibility === "") {
+            player.style.visibility = "visible";
             button.textContent = "HIDE PLAYER";
          } else {
-            player.style.display = "none";
+            player.style.visibility = "hidden";
             button.textContent = "SHOW PLAYER";
          }
       }
