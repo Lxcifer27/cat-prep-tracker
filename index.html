@@ -4,9 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
    <title>CATPrep-50DayTracker</title>
-
    <style>
       *,
       body {
@@ -22,8 +20,6 @@
       }
 
       iframe {
-         /* height: calc(100vh + 55px); */
-         /* width: 1080px; */
          width: 620px;
          height: 250px;
          margin: auto;
@@ -78,6 +74,7 @@
          width: 300px;
          background: #f1f3f4;
          box-shadow: 0 50px 80px rgba(0, 0, 0, 0.25);
+         display: none;
       }
 
       .player .imgbx {
@@ -109,7 +106,7 @@
          z-index: 2;
          display: flex;
          justify-content: space-between;
-         width: 107%;
+         width: calc(100% + 50px + 30px);
       }
 
       .avatar img:first-child {
@@ -128,7 +125,6 @@
       </video>
    </div>
    <div class="container">
-
       <iframe
          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQs5Tati_H7KhJtrajkSeUtGH3G6gxDtpPS-bdtMIR2FjcY6Xefww4uThsjamKfRmvpEel1r2n9uGqo/pubhtml?gid=0"></iframe>
    </div>
@@ -137,18 +133,37 @@
          UPDATE
       </a>
    </div>
-   <div class="player">
+   <div class="text" id="music">
+      <a href="#" id="toggleButton" onclick="togglePlayer()" style="border-color: red;color: red;">
+         CLICK ME
+      </a>
+   </div>
+   <div class="player" id="player">
       <div class="imgbx">
-         <img src="album.jpg">
+         <img src="album.jpg" alt="Album Art">
       </div>
       <audio controls>
-         <source src="song.mp3">
+         <source src="song.mp3" type="audio/mp3">
       </audio>
    </div>
    <div class="avatar">
       <img src="avatar.png" width="200px" alt="male">
       <img src="avatar-2.png" width="200px" alt="female">
    </div>
+
+   <script>
+      function togglePlayer() {
+         var player = document.getElementById("player");
+         var button = document.getElementById("toggleButton");
+         if (player.style.display === "none" || player.style.display === "") {
+            player.style.display = "block";
+            button.textContent = "HIDE PLAYER";
+         } else {
+            player.style.display = "none";
+            button.textContent = "SHOW PLAYER";
+         }
+      }
+   </script>
 </body>
 
 </html>
