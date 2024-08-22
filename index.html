@@ -13,6 +13,11 @@
          overflow: hidden;
       }
 
+      .row {
+         display: flex;
+         flex-flow: column;
+      }
+
       .container {
          text-align: center;
          background: #1f1f1f;
@@ -99,6 +104,16 @@
          outline: none;
       }
 
+      .text#music {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         /* width: fit-content; */
+         margin-left: auto;
+         margin-right: auto;
+      }
+
       .avatar {
          position: absolute;
          bottom: -20px;
@@ -124,34 +139,39 @@
       <video src="vid-bg.mp4" loop muted autoplay oncontextmenu="return false;" controlsList="nodownload">
       </video>
    </div>
-   <div class="container">
-      <iframe
-         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQs5Tati_H7KhJtrajkSeUtGH3G6gxDtpPS-bdtMIR2FjcY6Xefww4uThsjamKfRmvpEel1r2n9uGqo/pubhtml?gid=0"></iframe>
-   </div>
-   <div class="text">
-      <a href="https://docs.google.com/spreadsheets/d/1HLUW1eaZug-RQ1hFj8z-su9r4AzdmV1J3ZbLcb7uneE/edit?usp=sharing">
-         UPDATE
-      </a>
-   </div>
-   <div class="player" id="player">
-      <div class="imgbx">
-         <img src="album.jpg" alt="Album Art">
+   <div class="row">
+      <div class="container">
+         <iframe
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQs5Tati_H7KhJtrajkSeUtGH3G6gxDtpPS-bdtMIR2FjcY6Xefww4uThsjamKfRmvpEel1r2n9uGqo/pubhtml?gid=0"></iframe>
+         <div class="text">
+            <a
+               href="https://docs.google.com/spreadsheets/d/1HLUW1eaZug-RQ1hFj8z-su9r4AzdmV1J3ZbLcb7uneE/edit?usp=sharing">
+               UPDATE
+            </a>
+         </div>
       </div>
-      <audio controls>
-         <source src="song.mp3" type="audio/mp3">
-      </audio>
    </div>
-   <div class="text" id="music">
-      <a href="#" id="toggleButton" onclick="togglePlayer()" style="border-color: red;color: red;">
-         CLICK ME
-      </a>
-   </div>
+   <!-- <div class="container">
+         <div class="player" id="player">
+            <div class="imgbx">
+               <img src="album.jpg" alt="Album Art">
+            </div>
+            <audio controls>
+               <source src="song.mp3" type="audio/mp3">
+            </audio>
+         </div>
+         <div class="text" id="music">
+            <a href="#" id="toggleButton" onclick="togglePlayer()" style="border-color: red;color: red;">
+               CLICK ME
+            </a>
+         </div>
+      </div>
    <div class="avatar">
       <img src="avatar.png" width="200px" alt="male">
       <img src="avatar-2.png" width="200px" alt="female">
-   </div>
+   </div> -->
 
-   <script>
+   <!-- <script>
       function togglePlayer() {
          var player = document.getElementById("player");
          var button = document.getElementById("toggleButton");
@@ -163,7 +183,7 @@
             button.textContent = "SHOW PLAYER";
          }
       }
-   </script>
+   </script> -->
 </body>
 
 </html>
